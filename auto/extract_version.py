@@ -7,9 +7,8 @@ version = []
 
 with open(sys.argv[1], "r") as f:
     for line in f:
-        m = ver_re.match(line)
-        if m:
-            version.append(m.group(1))
+        if m := ver_re.match(line):
+            version.append(m[1])
 
 print(".".join(version))
 
